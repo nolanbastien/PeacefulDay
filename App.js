@@ -14,9 +14,9 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
+            options={{ headerShown: false }}
             name="Home"
             component={HomePage}
-            //options={{ title: "My routines" }}
           />
           <Stack.Screen name="Day" component={DayDetailsPage} />
         </Stack.Navigator>

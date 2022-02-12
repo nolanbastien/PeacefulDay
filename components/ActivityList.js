@@ -23,7 +23,7 @@ const DummyData = [
     ],
   }),
   (Day = {
-    dayName: "Peaceful1",
+    dayName: "Peaceful2",
     activities: [
       {
         name: "Respiration",
@@ -43,7 +43,7 @@ const DummyData = [
     ],
   }),
   (Day = {
-    dayName: "Peaceful1",
+    dayName: "Peaceful3",
     activities: [
       {
         name: "Respiration",

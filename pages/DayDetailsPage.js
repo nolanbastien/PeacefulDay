@@ -2,12 +2,14 @@ import { Box, Button } from "native-base";
 import ActivityList from "../components/ActivityList";
 import { Text } from "react-native-svg";
 
-function DayDetailsPage(props) {
+function DayDetailsPage({ navigation, route }) {
   return (
     <>
-      <Text alignItems="center" justifyContent="center">
-        YeeHaw {props.name}
-      </Text>
+      <Box alignItems="center">
+        <Button onPress={() => console.log(route.params.name)}>
+          {route.params.name}
+        </Button>
+      </Box>
     </>
   );
 }
