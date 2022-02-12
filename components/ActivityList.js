@@ -2,7 +2,7 @@ import { VStack } from "native-base";
 import ActivityCard from "./ActivityCard";
 
 const DummyData = [
-  Day = {
+  (Day = {
     dayName: "Peaceful1",
     activities: [
       {
@@ -20,10 +20,9 @@ const DummyData = [
         timeOfDay: "20:00",
         duration: "5 min",
       },
-    ]
-  },
-
-  Day = {
+    ],
+  }),
+  (Day = {
     dayName: "Peaceful1",
     activities: [
       {
@@ -41,10 +40,9 @@ const DummyData = [
         timeOfDay: "20:00",
         duration: "5 min",
       },
-    ]
-  },
-
-  Day = {
+    ],
+  }),
+  (Day = {
     dayName: "Peaceful1",
     activities: [
       {
@@ -62,15 +60,20 @@ const DummyData = [
         timeOfDay: "20:00",
         duration: "5 min",
       },
-    ]
-  },
+    ],
+  }),
 ];
 
-function ActivityList() {
+function ActivityList(props) {
   return (
     <VStack space={4} alignItems="center">
       {DummyData.map((day, count) => (
-        <ActivityCard key={count++} dayName={day.dayName} activities={day.activities} />
+        <ActivityCard
+          key={count++}
+          dayName={day.dayName}
+          activities={day.activities}
+          nav={props.navigations}
+        />
       ))}
     </VStack>
   );

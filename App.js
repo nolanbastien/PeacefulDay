@@ -1,11 +1,26 @@
 import { NativeBaseProvider } from "native-base";
-import HomePage from "./pages/HomePage";
 import { StyleSheet } from "react-native";
+import HomePage from "./pages/HomePage";
+import DayDetailsPage from "./pages/DayDetailsPage";
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NativeBaseProvider>
-      <HomePage />
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomePage}
+            //options={{ title: "My routines" }}
+          />
+          <Stack.Screen name="Day" component={DayDetailsPage} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 }
