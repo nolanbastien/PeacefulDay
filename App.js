@@ -18,7 +18,11 @@ export default function App() {
             name="Home"
             component={HomePage}
           />
-          <Stack.Screen name="Day" component={DayDetailsPage} />
+          <Stack.Screen
+            name="Day"
+            component={DayDetailsPage}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
