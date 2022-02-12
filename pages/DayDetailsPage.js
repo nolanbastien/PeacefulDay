@@ -1,14 +1,29 @@
 import { Box, Button } from "native-base";
-import ActivityList from "../components/ActivityList";
-import { Text } from "react-native-svg";
+import { Text } from "react-native";
 
 function DayDetailsPage({ navigation, route }) {
   return (
     <>
       <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
-        <Button onPress={() => console.log(route.params.name)}>
+
+        <Button onPress={() =>
+        navigation.navigate("Home",{})}>
+          Back
+          </Button>
+
+        <Text>
           {route.params.name}
-        </Button>
+        </Text>
+
+        {route.params.activities.map((activity, count) => (
+          <Text key={count++}>
+            {activity.name}, {activity.timeOfDay}, {activity.duration}
+          </Text>))
+          }
+
+<Button onPress={() => {console.log("Start")}}>Start</Button>
+
+<Button onPress={() => {console.log("Edit")}}>Edit Activity</Button>
       </Box>
     </>
   );
