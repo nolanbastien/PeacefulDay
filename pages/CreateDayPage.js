@@ -6,21 +6,17 @@ import {
   ScrollView,
   Text,
   VStack,
-  IconButton, AddIcon
+  IconButton,
+  AddIcon,
+  MinusIcon,
 } from "native-base";
 import { useState } from "react";
 import { TextInput, StyleSheet } from "react-native";
 import AddActivityCard from "../components/AddActivityCard";
 
-const questions = [
-  "How many breathing breaks do you want to take?",
-  "How many walks do you want to take?",
-  "How many exercise breaks do you want?",
-  "How many stretching breaks to do you want?",
-];
-
 function CreateDayPage({ navigation }) {
   const [numOfActivities, setNumOfActivities] = useState("0");
+  const [activityCards, setActivityCards] = useState([<AddActivityCard />]);
 
   return (
     <Box flex="1" direction="column" bg="white">
@@ -35,7 +31,7 @@ function CreateDayPage({ navigation }) {
           Back
         </Button>
       </HStack>
-
+      <ScrollView>
       <Box
         alignSelf="center"
         alignItems="center"
@@ -50,28 +46,48 @@ function CreateDayPage({ navigation }) {
         Create your day
       </Box>
 
-      <ScrollView>
+
         <Box flex={1} bg="white">
           <VStack space={10} justifyContent="center">
+
             <TextInput
               style={styles.input}
               placeholder="Name your day"
               maxLength={20}
             />
+            
+              <VStack space={6} alignItems="center">
+                {activityCards.map(() => (
+                  <AddActivityCard />
+                ))}
+              </VStack>
 
-            <AddActivityCard />
 
-            <Center>
-              <IconButton
-                mb="4"
-                variant="solid"
-                bg="blue.500"
-                colorScheme="indigo"
-                borderRadius="full"
-                icon={<AddIcon />}
-                onPress={() => navigation.navigate("Create", {})}
-              />
-            </Center>
+            <HStack space={4} justifyContent="center">
+              <Center>
+                <IconButton
+                  mb="4"
+                  variant="solid"
+                  bg="blue.500"
+                  colorScheme="indigo"
+                  borderRadius="full"
+                  icon={<MinusIcon />}
+                  onPress={() => setActivityCards(activityCards.splice(1,activityCards.length-1))}
+                />
+              </Center>
+
+              <Center>
+                <IconButton
+                  mb="4"
+                  variant="solid"
+                  bg="blue.500"
+                  colorScheme="indigo"
+                  borderRadius="full"
+                  icon={<AddIcon />}
+                  onPress={() => setActivityCards(activityCards.concat(<AddActivityCard />))}
+                />
+              </Center>
+            </HStack>
 
             <Center>
               <Button
