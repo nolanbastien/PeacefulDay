@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { Box, Button, ScrollView } from "native-base";
+import { AddIcon, Box, Center, IconButton, ScrollView } from "native-base";
 import ActivityList from "../components/ActivityList";
 
 function HomePage() {
@@ -20,19 +20,23 @@ function HomePage() {
       >
         Your Peaceful Days
       </Box>
+
       <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
         <ScrollView>
           <ActivityList />
         </ScrollView>
-
-        <Button
-          mt="6"
-          borderRadius="full"
-          onPress={() => navigation.navigate("Create", {})}
-        >
-          +
-        </Button>
       </Box>
+      <Center>
+        <IconButton
+          mb="4"
+          variant="solid"
+          bg="blue.500"
+          colorScheme="indigo"
+          borderRadius="full"
+          icon={<AddIcon />}
+          onPress={() => navigation.navigate("Create", {})}
+        />
+      </Center>
     </Box>
   );
 }
