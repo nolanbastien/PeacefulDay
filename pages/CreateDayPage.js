@@ -1,11 +1,8 @@
-function CreateDayPage(props) {
-  return (
-    <>
-      <Text alignItems="center" justifyContent="center">
-        YeeHaw {props.name}
-      </Text>
-    </>
-  );
+import { Center } from "native-base";
+import Test from "../components/Test.jsx";
+
+function CreateDayPage({ navigation, route }) {
+  return <Test />;
 }
 
 export default CreateDayPage;

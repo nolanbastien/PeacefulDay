@@ -1,7 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import { Box, Button } from "native-base";
 import ActivityList from "../components/ActivityList";
 
-function HomePage(props) {
+function HomePage() {
+  const navigation=useNavigation();
   return (
     <>
       <Box
@@ -18,11 +20,11 @@ function HomePage(props) {
         Peaceful Days
       </Box>
       <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
-        <ActivityList navigations={props.navigations} />
+        <ActivityList />
         <Button
           mt="4"
           borderRadius="full"
-          onPress={() => console.log("hello world")}
+          onPress={() => navigation.navigate("Create", {})}
         >
           +
         </Button>

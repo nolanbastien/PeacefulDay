@@ -5,6 +5,7 @@ import DayDetailsPage from "./pages/DayDetailsPage";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import CreateDayPage from "./pages/CreateDayPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,11 @@ export default function App() {
           <Stack.Screen
             name="Day"
             component={DayDetailsPage}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Create"
+            component={CreateDayPage}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
