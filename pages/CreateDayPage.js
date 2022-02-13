@@ -1,6 +1,14 @@
-import { Box, Button, Center, HStack, ScrollView, Text } from "native-base";
+import {
+  Box,
+  Button,
+  Center,
+  HStack,
+  ScrollView,
+  Text,
+  VStack,
+} from "native-base";
 import { useState } from "react";
-import {} from "react-native";
+import { TextInput, StyleSheet } from "react-native";
 
 const questions = [
   "How many breathing breaks do you want to take?",
@@ -42,7 +50,13 @@ function CreateDayPage({ navigation }) {
 
       <ScrollView>
         <Box flex={1} bg="white">
-          <HStack space={10} justifyContent="center">
+          <VStack space={10} justifyContent="center">
+            <TextInput
+              style={styles.input}
+              placeholder="Name your day"
+              maxLength={20}
+            />
+
             <Center>
               <Button
                 onPress={() => navigation.navigate("Home", {})}
@@ -50,14 +64,23 @@ function CreateDayPage({ navigation }) {
                 size="lg"
                 shadow={3}
               >
-                Back
+                Submit
               </Button>
             </Center>
-          </HStack>
+          </VStack>
         </Box>
       </ScrollView>
     </Box>
   );
 }
+
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
 
 export default CreateDayPage;
