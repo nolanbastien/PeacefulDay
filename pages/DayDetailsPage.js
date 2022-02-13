@@ -13,22 +13,23 @@ function DayDetailsPage({ navigation, route }) {
   return (
     <>
       <Box flex={1} bg="white">
-        <Center w="64" h="20" position="absolute" right="200px" top="50px">
+        <HStack mt="1/4" ml="5">
           <Button
+            key="lg"
             size="lg"
-            //variant="ghost"
             colorScheme="secondary"
+            shadow={3}
             onPress={() => navigation.navigate("Home", {})}
           >
-            {"< Back"}
+            Back
           </Button>
-        </Center>
+        </HStack>
 
         <Box
           alignSelf="center"
           alignItems="center"
-          mt="20"
-          p="10"
+          mt="15"
+          p="5"
           width="100%"
           borderColor="blue.500"
           _text={{

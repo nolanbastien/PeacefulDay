@@ -1,4 +1,4 @@
-import { Box, Button, Center, HStack, Text } from "native-base";
+import { Box, Button, Center, HStack, ScrollView, Text } from "native-base";
 import { useState } from "react";
 import {} from "react-native";
 
@@ -13,11 +13,12 @@ function CreateDayPage({ navigation }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState("0");
 
   return (
-    <Box flex="1" direction="column">
+    <Box flex="1" direction="column" bg="white">
       <HStack mt="1/4" ml="5">
         <Button
           key="lg"
           size="lg"
+          colorScheme="secondary"
           shadow={3}
           onPress={() => navigation.navigate("Home", {})}
         >
@@ -25,23 +26,26 @@ function CreateDayPage({ navigation }) {
         </Button>
       </HStack>
 
-      <Center flex="1" p="5">
-        <Text fontSize="2xl">{questions[currentQuestionIndex]}</Text>
-      </Center>
-      <Center>
-        <Text>
-          {parseInt(currentQuestionIndex) + 1} of {questions.length}
-        </Text>
-      </Center>
+      <Box
+        alignSelf="center"
+        alignItems="center"
+        mt="15"
+        p="5"
+        width="100%"
+        borderColor="blue.500"
+        _text={{
+          fontSize: "5xl",
+        }}
+      >
+        Create your day
+      </Box>
 
-      <Box flexDirection="column" p="4">
-        <HStack space={10} justifyContent="center">
-          {parseInt(currentQuestionIndex) >= 1 && (
+      <ScrollView>
+        <Box flex={1} bg="white">
+          <HStack space={10} justifyContent="center">
             <Center>
               <Button
-                onPress={() => {
-                  setCurrentQuestionIndex(parseInt(currentQuestionIndex) - 1);
-                }}
+                onPress={() => navigation.navigate("Home", {})}
                 key="lg"
                 size="lg"
                 shadow={3}
@@ -49,23 +53,9 @@ function CreateDayPage({ navigation }) {
                 Back
               </Button>
             </Center>
-          )}
-          {parseInt(currentQuestionIndex) < questions.length - 1 && (
-            <Center>
-              <Button
-                key="lg"
-                size="lg"
-                shadow={3}
-                onPress={() => {
-                  setCurrentQuestionIndex(parseInt(currentQuestionIndex) + 1);
-                }}
-              >
-                Next
-              </Button>
-            </Center>
-          )}
-        </HStack>
-      </Box>
+          </HStack>
+        </Box>
+      </ScrollView>
     </Box>
   );
 }
