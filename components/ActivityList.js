@@ -3,10 +3,10 @@ import ActivityCard from "./ActivityCard";
 
 const DummyData = [
   (Day = {
-    dayName: "Peaceful1",
+    dayName: "Relaxed Day",
     activities: [
       {
-        name: "Respiration",
+        name: "Breathe",
         timeOfDay: "14:00",
         duration: "5 min",
       },
@@ -23,10 +23,10 @@ const DummyData = [
     ],
   }),
   (Day = {
-    dayName: "Peaceful2",
+    dayName: "Concentration",
     activities: [
       {
-        name: "Respiration",
+        name: "Breathe",
         timeOfDay: "14:00",
         duration: "5 min",
       },
@@ -43,10 +43,10 @@ const DummyData = [
     ],
   }),
   (Day = {
-    dayName: "Peaceful3",
+    dayName: "Energized",
     activities: [
       {
-        name: "Respiration",
+        name: "Breathe",
         timeOfDay: "14:00",
         duration: "5 min",
       },
