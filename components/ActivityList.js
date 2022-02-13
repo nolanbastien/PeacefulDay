@@ -20,6 +20,51 @@ const DummyData = [
         timeOfDay: "20:00",
         duration: "5 min",
       },
+      {
+        name: "Breathe",
+        timeOfDay: "14:00",
+        duration: "5 min",
+      },
+      {
+        name: "Stretch",
+        timeOfDay: "16:00",
+        duration: "5 min",
+      },
+      {
+        name: "Take a Walk",
+        timeOfDay: "20:00",
+        duration: "5 min",
+      },
+      {
+        name: "Breathe",
+        timeOfDay: "14:00",
+        duration: "5 min",
+      },
+      {
+        name: "Stretch",
+        timeOfDay: "16:00",
+        duration: "5 min",
+      },
+      {
+        name: "Take a Walk",
+        timeOfDay: "20:00",
+        duration: "5 min",
+      },
+      {
+        name: "Breathe",
+        timeOfDay: "14:00",
+        duration: "5 min",
+      },
+      {
+        name: "Stretch",
+        timeOfDay: "16:00",
+        duration: "5 min",
+      },
+      {
+        name: "Take a Walk",
+        timeOfDay: "20:00",
+        duration: "5 min",
+      },
     ],
   }),
   (Day = {

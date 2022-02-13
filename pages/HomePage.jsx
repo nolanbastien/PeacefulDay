@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { Box, Button } from "native-base";
+import { Box, Button, ScrollView } from "native-base";
 import ActivityList from "../components/ActivityList";
 
 function HomePage() {
@@ -21,7 +21,10 @@ function HomePage() {
         Your Peaceful Days
       </Box>
       <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
-        <ActivityList />
+        <ScrollView>
+          <ActivityList />
+        </ScrollView>
+
         <Button
           mt="6"
           borderRadius="full"
