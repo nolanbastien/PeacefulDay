@@ -6,9 +6,11 @@ import {
   ScrollView,
   Text,
   VStack,
+  IconButton, AddIcon
 } from "native-base";
 import { useState } from "react";
 import { TextInput, StyleSheet } from "react-native";
+import AddActivityCard from "../components/AddActivityCard";
 
 const questions = [
   "How many breathing breaks do you want to take?",
@@ -18,7 +20,7 @@ const questions = [
 ];
 
 function CreateDayPage({ navigation }) {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState("0");
+  const [numOfActivities, setNumOfActivities] = useState("0");
 
   return (
     <Box flex="1" direction="column" bg="white">
@@ -56,6 +58,20 @@ function CreateDayPage({ navigation }) {
               placeholder="Name your day"
               maxLength={20}
             />
+
+            <AddActivityCard />
+
+            <Center>
+              <IconButton
+                mb="4"
+                variant="solid"
+                bg="blue.500"
+                colorScheme="indigo"
+                borderRadius="full"
+                icon={<AddIcon />}
+                onPress={() => navigation.navigate("Create", {})}
+              />
+            </Center>
 
             <Center>
               <Button
